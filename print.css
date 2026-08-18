@@ -1,0 +1,469 @@
+/* ==========================================================
+   TLAČ MAPY – mapa-efp
+   A4 LANDSCAPE
+   ========================================================== */
+
+/* Tlačidlo v mape */
+.print-map-control {
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+    padding: 0;
+    border: 0;
+    border-radius: 2px;
+    background: #f8f8f8;
+    color: #444;
+    font-size: 17px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0,0,0,.25);
+}
+
+.print-map-control:hover {
+    background: #fff;
+}
+
+/* Modal */
+#print-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,.60);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#print-modal.is-open {
+    display: flex;
+}
+
+.print-dialog {
+    width: min(1200px, 96vw);
+    max-height: 96vh;
+    overflow: auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.35);
+}
+
+.print-dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    font-size: 17px;
+}
+
+.print-close {
+    border: 0;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.print-dialog-body {
+    padding: 14px;
+}
+
+.print-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 14px;
+    margin-bottom: 14px;
+}
+
+.print-options label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.print-options input[type="text"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.print-checks {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 5px 0;
+    font-weight: normal;
+}
+
+.print-checks label {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    font-weight: normal;
+}
+
+.print-format-info {
+    grid-column: 1 / -1;
+    padding: 7px 10px;
+    background: #f4f4f4;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.print-preview-wrap {
+    overflow: auto;
+    padding: 10px;
+    background: #e7e7e7;
+}
+
+/* A4 landscape – pomer 297 : 210 */
+.print-window {
+    position: relative;
+    box-sizing: border-box;
+    width: 1120px;
+    min-height: 790px;
+    padding: 28px 30px 20px 30px;
+    margin: auto;
+    background: #fff;
+    color: #111;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #aaa;
+}
+
+.print-title {
+    height: 38px;
+    text-align: center;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 30px;
+    margin-bottom: 9px;
+}
+
+.print-map {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    background: #f7f7f7;
+    border: 2px solid #222;
+}
+
+.print-map.no-map-border {
+    border: 0;
+}
+
+.print-map-image,
+.print-map-canvas {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.print-map-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #777;
+}
+
+/* Severka */
+.print-north {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 60px;
+    padding: 2px;
+    background: rgba(255,255,255,.85);
+    border: 1px solid #333;
+    font-size: 13px;
+    font-weight: bold;
+    z-index: 5;
+}
+
+.north-arrow {
+    display: block;
+    font-size: 30px;
+    line-height: 30px;
+}
+
+.print-bottom {
+    display: grid;
+    grid-template-columns: 1fr 230px;
+    gap: 14px;
+    min-height: 105px;
+    padding-top: 10px;
+}
+
+.print-legend-box,
+.print-scale-box {
+    box-sizing: border-box;
+    border: 1px solid #555;
+    padding: 7px 9px;
+    background: #fff;
+}
+
+.print-box-title {
+    margin-bottom: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 3px;
+}
+
+.print-legend {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    gap: 3px 12px;
+    max-height: 85px;
+    overflow: hidden;
+}
+
+.print-legend-item {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    font-size: 8px;
+    line-height: 10px;
+}
+
+.print-legend-item img {
+    flex: 0 0 auto;
+    width: 22px;
+    max-height: 16px;
+    object-fit: contain;
+    margin-right: 4px;
+}
+
+.print-legend-item span {
+    overflow: hidden;
+}
+
+.print-legend-text {
+    font-size: 8px;
+    line-height: 10px;
+}
+
+.print-no-legend {
+    font-size: 9px;
+    color: #777;
+}
+
+.print-scale-wrap {
+    padding-top: 12px;
+}
+
+.print-scale-line {
+    width: 130px;
+    height: 0;
+    border-top: 3px solid #111;
+    border-left: 1px solid #111;
+    border-right: 1px solid #111;
+}
+
+.print-scale-label {
+    width: 130px;
+    text-align: center;
+    margin-top: 4px;
+    font-size: 10px;
+}
+
+.print-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+    padding-top: 5px;
+    border-top: 1px solid #aaa;
+    font-size: 8px;
+}
+
+/* Ovládanie dialógu */
+.print-dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 12px 16px;
+    border-top: 1px solid #ddd;
+}
+
+.print-btn {
+    padding: 9px 14px;
+    border-radius: 4px;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.print-btn.secondary {
+    background: #f4f4f4;
+}
+
+.print-btn.primary {
+    background: #222;
+    color: white;
+    border-color: #222;
+}
+
+/* ==========================================================
+   TLAČ
+   ========================================================== */
+
+@page {
+    size: A4 landscape;
+    margin: 0;
+}
+
+@media print {
+
+    html,
+    body {
+        width: 297mm;
+        height: 210mm;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+    }
+
+    body * {
+        visibility: hidden !important;
+    }
+
+    #print-window,
+    #print-window * {
+        visibility: visible !important;
+    }
+
+    #print-window {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 297mm !important;
+        height: 210mm !important;
+        min-height: 210mm !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 7mm 8mm 5mm 8mm !important;
+        border: 0 !important;
+        overflow: hidden !important;
+        background: white !important;
+    }
+
+    .print-title {
+        height: 9mm !important;
+        margin-bottom: 2mm !important;
+        font-size: 16pt !important;
+        line-height: 8mm !important;
+    }
+
+    .print-map {
+        height: 125mm !important;
+        border: 0.5mm solid #222 !important;
+    }
+
+    .print-bottom {
+        height: 30mm !important;
+        min-height: 30mm !important;
+        padding-top: 2mm !important;
+        grid-template-columns: 1fr 55mm !important;
+        gap: 3mm !important;
+    }
+
+    .print-legend-box,
+    .print-scale-box {
+        padding: 1.5mm 2mm !important;
+    }
+
+    .print-legend {
+        max-height: 24mm !important;
+        grid-template-columns: repeat(4, minmax(35mm, 1fr)) !important;
+        gap: 1mm 2mm !important;
+    }
+
+    .print-legend-item {
+        font-size: 6.5pt !important;
+        line-height: 7pt !important;
+    }
+
+    .print-legend-item img {
+        width: 7mm !important;
+        max-height: 5mm !important;
+        margin-right: 1mm !important;
+    }
+
+    .print-legend-text {
+        font-size: 6.5pt !important;
+        line-height: 7pt !important;
+    }
+
+    .print-scale-wrap {
+        padding-top: 4mm !important;
+    }
+
+    .print-scale-line {
+        width: 32mm !important;
+    }
+
+    .print-scale-label {
+        width: 32mm !important;
+        font-size: 7pt !important;
+    }
+
+    .print-footer {
+        margin-top: 1.5mm !important;
+        padding-top: 1mm !important;
+        font-size: 6.5pt !important;
+    }
+
+    .print-dialog,
+    .print-dialog-body,
+    .print-preview-wrap {
+        display: block !important;
+        position: static !important;
+        width: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    #print-modal {
+        position: static !important;
+        display: block !important;
+        background: transparent !important;
+    }
+
+    .print-dialog-header,
+    .print-options,
+    .print-dialog-footer {
+        display: none !important;
+    }
+
+    .ol-control,
+    .ol-overlaycontainer,
+    .ol-overlaycontainer-stopevent,
+    #popup {
+        display: none !important;
+    }
+
+    .print-north {
+        display: flex !important;
+    }
+}
