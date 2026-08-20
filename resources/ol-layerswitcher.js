@@ -67,7 +67,7 @@ class LayerSwitcher extends Control {
         const options = Object.assign({}, opt_options);
         const element = document.createElement('div');
         super({ element: element, target: options.target });
-        this.activationMode = options.activationMode || 'mouseover';
+        this.activationMode = options.activationMode || 'click';
         this.startActive = options.startActive === true;
         // TODO Next: Rename to showButtonContent
         this.label = options.label !== undefined ? options.label : '';

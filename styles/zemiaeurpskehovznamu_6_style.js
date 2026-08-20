@@ -19,7 +19,7 @@ var style_zemiaeurpskehovznamu_6 = function(feature, resolution){
     var overflow = true;
     var repeat = 0;
     var placement = 'point';
-    if (feature.get("NAZOV_UEV") !== null) {
+    if (feature.get("NAZOV_UEV") !== null && resolution > 0 && resolution < 14) {
         labelText = String(feature.get("NAZOV_UEV"));
     }
     var style = [ new ol.style.Style({

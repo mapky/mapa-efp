@@ -9,8 +9,8 @@ var style_JPRLCHKOKysuce_4 = function(feature, resolution){
     
     var labelText = ""; 
     var value = feature.get("");
-    var labelFont = "10px, sans-serif";
-    var labelFill = "#000000";
+    var labelFont = "13.0px \'Open Sans\', sans-serif";
+    var labelFill = "#3b7f39";
     var bufferColor = "";
     var bufferWidth = 0;
     var textAlign = 'left';
@@ -19,11 +19,11 @@ var style_JPRLCHKOKysuce_4 = function(feature, resolution){
     var overflow = false;
     var repeat = 0;
     var placement = 'point';
-    if ("" !== null) {
-        labelText = String("");
+    if (feature.get("idjprl") !== null) {
+        labelText = String(feature.get("idjprl"));
     }
     var style = [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(56,128,54,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.988}),fill: new ol.style.Fill({color: 'rgba(77,175,74,1.0)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(59,127,57,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 3.04}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth, textAlign, offsetX, offsetY, overflow, repeat)

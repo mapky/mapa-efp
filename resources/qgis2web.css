@@ -424,3 +424,55 @@ td video {
     color: orangered;
 	font-size: 15px;
 }
+
+/* ------------------------------------------------------------------
+   North arrow
+   ------------------------------------------------------------------ */
+.north-arrow-control {
+    position: absolute;
+    left: 10px;
+    bottom: 25px;
+    width: 120px;
+    height: 120px;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    pointer-events: none;
+}
+
+.north-arrow-control img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background: transparent;
+}
+
+/* ==================================================================
+   CSS ŠTÝL PRE TLAČ MAPY (A4 NA ŠÍRKU)
+   ================================================================== */
+
+/* Nastavenie vlastností papierového hárku */
+@page {
+  size: A4 landscape; /* Vynúti formát A4 na šírku */
+  margin: 2cm;          /* Okraje papierového hárku */
+}
+
+/* Pravidlá aplikované výhradne pri tlači (Ctrl+P / Tlačidlo) */
+@media print {
+  
+  /* Prispôsobenie mapového okna */
+  #map {
+    width: 100% !important;        /* Roztiahne mapu na plnú šírku hárku */
+    max-height: 85vh !important;   /* Maximálna výška (nechá miesto pre okraje) */
+    aspect-ratio: 1.414 / 1;       /* Zachová presný pomer strán A4 na šírku */
+    margin: 0 auto !important;     /* Vycentruje mapu na stranu */
+    break-inside: avoid;           /* Zabráni rozdeleniu mapy na viac strán */
+    page-break-inside: avoid;      /* Spätná kompatibilita pre staršie prehliadače */
+  }
+
+  /* Skrytie tlačidiel pre približovanie (+ / -) */
+  .ol-zoom {
+    display: none !important;
+  }
+}
