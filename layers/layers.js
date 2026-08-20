@@ -57,62 +57,16 @@ var lyr_Ekologickofunknpriestory_3 = new ol.layer.Vector({
                 source:jsonSource_Ekologickofunknpriestory_3, 
                 style: style_Ekologickofunknpriestory_3,
                 popuplayertitle: 'Ekologicko-funkčné priestory',
-                interactive: false,
+                interactive: true,
     title: 'Ekologicko-funkčné priestory<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_0.png" /> 1.2.1 Lesy - Bezzásah<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_1.png" /> 1.2.2 Lesy - Bezzásah<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_2.png" /> 1.2.3 Lesy - Bezzásah<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_3.png" /> 1.2.4 Lesy - Bezzásah<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_4.png" /> 2.2.1 Lesy - Prírode blízke hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_5.png" /> 2.2.2 Lesy - Prírode blízke hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_6.png" /> 2.2.3 Lesy - Prírode blízke hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_7.png" /> 2.2.4 Lesy - Prírode blízke hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_8.png" /> 2.2.5 Lesy - Prírode blízke hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_9.png" /> 2.2.6 Lesy - Prírode blízke hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_10.png" /> 2.2.7 Lesy - Prírode blízke hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_11.png" /> 2.2.8 Lesy - Prírode blízke hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_12.png" /> 3.2.1 Lesy - Hluchánia oblasť<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_13.png" /> 3.2.2 Lesy - Hluchánia oblasť<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_14.png" /> 4.2.1 Lesy - Bežné hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_15.png" /> 4.2.2 Lesy - Bežné hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_16.png" /> 4.2.3 Lesy - Bežné hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_17.png" /> 4.2.4 Lesy - Bežné hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_18.png" /> 4.2.5 Lesy - Bežné hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_19.png" /> 4.2.6 Lesy - Bežné hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_20.png" /> 4.2.7 Lesy - Bežné hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_21.png" /> 4.2.8 Lesy - Bežné hospodárenie<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_22.png" /> 5.2.1 Trvalé trávne porasty<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_23.png" /> 5.2.2 Trvalé trávne porasty<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_24.png" /> 5.2.3 Trvalé trávne porasty<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_25.png" /> 5.2.4 Trvalé trávne porasty<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_26.png" /> 5.2.5 Trvalé trávne porasty<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_27.png" /> 5.2.6 Trvalé trávne porasty<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_28.png" /> 5.2.8 Trvalé trávne porasty<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_29.png" /> 5.2.9 Trvalé trávne porasty<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_30.png" /> 6.2.1 Rašeliniská a mokrade<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_31.png" /> 6.2.10 Rašeliniská a mokrade<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_32.png" /> 6.2.11 Rašeliniská a mokrade<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_33.png" /> 6.2.13 Rašeliniská a mokrade<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_34.png" /> 6.2.14 Rašeliniská a mokrade<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_35.png" /> 6.2.15 Rašeliniská a mokrade<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_36.png" /> 6.2.2 Rašeliniská a mokrade<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_37.png" /> 6.2.3 Rašeliniská a mokrade<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_38.png" /> 6.2.4 Rašeliniská a mokrade<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_39.png" /> 6.2.5 Rašeliniská a mokrade<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_40.png" /> 6.2.6 Rašeliniská a mokrade<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_41.png" /> 6.2.7 Rašeliniská a mokrade<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_42.png" /> 6.2.8 Rašeliniská a mokrade<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_43.png" /> 6.2.9 Rašeliniská a mokrade<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_44.png" /> 7.2.1 Brehové porasty a vodné toky<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_45.png" /> 7.2.2 Brehové porasty a vodné toky<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_46.png" /> 7.2.3 Brehové porasty a vodné toky<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_47.png" /> 7.2.4 Brehové porasty a vodné toky<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_48.png" /> 7.2.5 Brehové porasty a vodné toky<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_49.png" /> 7.2.6 Brehové porasty a vodné toky<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_50.png" /> 7.2.7 Brehové porasty a vodné toky<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_51.png" /> 7.2.8 Brehové porasty a vodné toky<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_52.png" /> 7.2.9 Brehové porasty a vodné toky<br />\
-    <img src="styles/legend/Ekologickofunknpriestory_3_53.png" /> 9 Ostatné plochy<br />' });
+    <img src="styles/legend/Ekologickofunknpriestory_3_0.png" /> Lesy - Bezzásah<br />\
+    <img src="styles/legend/Ekologickofunknpriestory_3_1.png" /> Lesy - Prírode blízke hospodárenie<br />\
+    <img src="styles/legend/Ekologickofunknpriestory_3_2.png" /> Lesy - Hluchánia oblasť<br />\
+    <img src="styles/legend/Ekologickofunknpriestory_3_3.png" /> Lesy - Bežné hospodárenie<br />\
+    <img src="styles/legend/Ekologickofunknpriestory_3_4.png" /> Trvalé trávne porasty<br />\
+    <img src="styles/legend/Ekologickofunknpriestory_3_5.png" /> Rašeliniská a mokrade<br />\
+    <img src="styles/legend/Ekologickofunknpriestory_3_6.png" /> Brehové porasty a vodné toky<br />\
+    <img src="styles/legend/Ekologickofunknpriestory_3_7.png" /> Ostatné plochy<br />' });
 var format_JPRLCHKOKysuce_4 = new ol.format.GeoJSON();
 var features_JPRLCHKOKysuce_4 = format_JPRLCHKOKysuce_4.readFeatures(json_JPRLCHKOKysuce_4, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
