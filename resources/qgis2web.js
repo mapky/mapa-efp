@@ -37,6 +37,18 @@ function styleCursorMove() {
 }
 styleCursorMove();
 
+// North arrow (SVG)
+// The SVG is displayed as a fixed OpenLayers map control.
+// Change width/height below to adjust its size.
+var northArrowElement = document.createElement('div');
+northArrowElement.className = 'north-arrow-control';
+northArrowElement.innerHTML = '<img src="images/severka.svg" alt="Severka">';
+
+var northArrowControl = new ol.control.Control({
+    element: northArrowElement
+});
+map.addControl(northArrowControl);
+
 ////small screen definition
     var hasTouchScreen = map.getViewport().classList.contains('ol-touch');
     var isSmallScreen = window.innerWidth < 650;
@@ -517,6 +529,11 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 
 
 //scalebar
+var scaleLineControl = new ol.control.ScaleLine({
+    units: 'metric',
+    minWidth: 100
+});
+map.addControl(scaleLineControl);
 
 
 //layerswitcher
